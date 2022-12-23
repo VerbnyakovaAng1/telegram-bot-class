@@ -1,0 +1,29 @@
+class APIException(Exception):
+    pass
+
+class Converter:
+    @staticmethod
+    def get_price (quote: str, amount: str, base: str):
+         
+      
+         
+         if quote == base:
+            raise APIException(f'Невозможно перевести одинковые валюты {base}.')
+        
+    try:
+            quote_ticker = keys [quote]
+    except KeyError:
+            raise APIException(f'Не удается обработать валюту {quote}!')
+
+    try:
+            base_ticker = keys [base]
+    except KeyError:
+            raise APIException(f'Не удается обработать валюту {base}!')
+        
+    try:
+            amount = float(amount)
+    except ValueError:
+            raise APIException(f'Не удается обработать количество {amount}.')
+            
+if len(values) != 3:
+            raise APIException('Слишком много параметровю')
